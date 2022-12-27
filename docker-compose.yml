@@ -1,0 +1,22 @@
+version: "3"
+services:
+  backend:
+    build: 
+          context: /home/aparna/mern-stack/backend
+          dockerfile: /home/aparna/mern-stack/backend/Dockerfile
+    ports:
+      - "4000:4000"
+  frontend:
+    build: 
+          context: /home/aparna/mern-stack/frontend
+          dockerfile: /home/aparna/mern-stack/frontend/Dockerfile
+    ports:
+      - "3000:3000"
+    network_mode: host   
+  nginx:
+    build: 
+          context: /home/aparna/mern-stack/nginx
+          dockerfile: /home/aparna/mern-stack/nginx/Dockerfile
+    ports:
+      - "80:80"
+    network_mode: host
